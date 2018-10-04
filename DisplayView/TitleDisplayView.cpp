@@ -8,8 +8,5 @@
 using namespace std;
 
 void TitleDisplayView::update() {
-    while (update_LOOP){
-        cout << "tdv update\n" << endl;
-        sleep(1);
-    }
+    cout << "tdv update\n" << endl;
 }

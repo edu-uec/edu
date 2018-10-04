@@ -21,3 +21,7 @@ edu.jconfの
 ```
 で指定されているmodelフォルダとその内部ファイルは、dictation-kit-v4.4のmodelフォルダのことである。
 
+## ver 0.0.1b
+
+* juliusとの接続をできるようにしました。CLionでコンパイルする時、カレントディレクトリがcmake-build-debugディレクトリになっていたため、それに合わせてjulius_start.shなども相対パスを変更していることに注意。
+* 複数のthreadをdetach,joinを使い分けて用いていますが、動作の安定度はいずれ確認する必要があります。

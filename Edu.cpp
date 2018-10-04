@@ -3,30 +3,32 @@
 #include <unistd.h>
 #include "ContentMaster/EduContent.h"
 #include "DisplayView/EduDisplayView.h"
+#include "Julius/juliusReceiver.h"
 
 using namespace std;
 
-int main(){
-  cout << "main 0" << endl;
+int main(int argc, char* argv[]){
 
-  TitleContentMaster tcm;
-  tcm.call();
-  //std::thread thread1(&TitleContentMaster::update, &tcm);
-  std::thread thread1([&tcm]() { tcm.update(); });
-  thread1.detach();//join関数ならば合流を待つ。 detach関数ならば合流を待たない。
+    //julius起動
+    juliusReceiver julius;
+    //std::thread thread1(&juliusReceiver::receiveData, &julius);
+    std::thread thread_julius([&julius]() { julius.receiveData(); });
 
-  TitleDisplayView tdv, tdv2;
-  std::thread thread2([&tdv]() { tdv.update(); });
-  thread2.detach();
+    thread_julius.detach();
 
-  cout << "main 1" << endl;
-  sleep(5);
 
-  tdv.update_LOOP = false;
+    TitleContentMaster tcm;
+    TitleDisplayView tdv;
 
-  cout << "main 2" << endl;
-
-  sleep(5);
+    //std::thread thread1(&TitleContentMaster::update, &tcm);
+    std::thread thread1([&tcm, &tdv]() {
+        while (1) {
+            tcm.update();
+            tdv.update();
+            sleep(1);
+        }
+    });
+    thread1.join();//join関数ならば合流を待つ。 detach関数ならば合流を待たない。
 
   return 0;
 }

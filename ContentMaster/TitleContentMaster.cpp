@@ -10,9 +10,6 @@ string methodTest(){
 }
 
 void TitleContentMaster::update() {
-    while (update_LOOP) {
-        cout << methodTest() << endl;
-        sleep(1);
-    }
+    cout << methodTest() << endl;
 }
 

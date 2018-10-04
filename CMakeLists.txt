@@ -9,4 +9,4 @@ add_executable(Edu_software_cpp
         Edu.cpp
         ContentMaster/EduContent.h
         DisplayView/EduDisplayView.h
-        DisplayView/TitleDisplayView.cpp DisplayView/DisplayViewBase_CommonMethods.cpp)
+        DisplayView/TitleDisplayView.cpp DisplayView/DisplayViewBase_CommonMethods.cpp Julius/juliusReceiver.h)
