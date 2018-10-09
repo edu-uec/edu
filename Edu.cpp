@@ -24,9 +24,11 @@ int main(){
 
   tdv.update_LOOP = false;
 
-  cout << "main 2" << endl;
-
-  sleep(5);
+    while (1) {
+        tcm.update();
+        tdv.update();
+        sleep(1);
+    }
 
   return 0;
 }

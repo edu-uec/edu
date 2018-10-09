@@ -5,8 +5,6 @@
 #ifndef EDU_SOFTWARE_CPP_EDUCONTENT_H
 #define EDU_SOFTWARE_CPP_EDUCONTENT_H
 
-
-
 /*
  ここに書かれた変数やメソッドやクラスはこのファイルをインクルードすることで共有できるようになる。
  その処理は通例、別のcppファイルで実装する。(一応ここにも書けるが推奨されない)
