@@ -30,7 +30,7 @@ int split(char *dst[], char *src, char delim){
 
 juliusReceiver::juliusReceiver() {
     //julius起動
-    system("cd ../");
+    //system("cd ../");
     system("bash ../Julius/julius_start.sh");
 
     sleep(2);
@@ -48,66 +48,71 @@ juliusReceiver::juliusReceiver() {
     //addr.sin_addr.s_addr = INADDR_ANY;
 
     // サーバ接続
-    if (connect( sockfd, (struct sockaddr *)&addr, sizeof( addr ) ) < 0){
+    if (connect( sockfd, (struct sockaddr *)&addr, sizeof( addr ) ) != 0){
         perror("connect fallita");
         exit(2);
     }
 
+    sleep(3);
 }
 
 void juliusReceiver::receiveData() {
-    // 受信
-    int rsize;
-    char *bbuf[100];
-    int rline;
 
     while( julius_LOOP ) {
+        sleep(1);
+
         rsize = recv( sockfd, buf, sizeof( buf ), 0 );
 
+        printf("1asdasd");
         if ( rsize == -1 ) {
             perror( "recv" );
         } else {
-            //printf("recv : %s\n", buf);
+
             rline = split(bbuf, buf, '\n');
 
             for(int i = 0; i < rline; i++){
                 sbuf = string(bbuf[i]);
                 if(sbuf.find("WHYPO WORD") != -1){
-                    //printf("rr : %s\n", bbuf[i]);
+                    try {
+                        //printf("rr : %s\n", bbuf[i]);
 
-                    //order準備初期化
-                    auto order1 = (struct order*)malloc(sizeof(struct order));
+                        //order準備初期化
+                        auto order1 = (struct order*)malloc(sizeof(struct order));
 
-                    char* rbbuf = bbuf[i];
+                        char* rbbuf = bbuf[i];
 
-                    //word取得
-                    rbbuf += 17;
-                    unsigned int wcount = 0;
-                    while (*rbbuf++ != '"'){
-                        wcount++;
-                    }
-                    order1->word = sbuf.substr(17, wcount);
-
-                    //classid取得
-                    rbbuf += 10;
-                    unsigned int icount = 0;
-                    while (*rbbuf++ != '"'){
-                        icount++;
-                    }
-                    order1->classid = atoi(sbuf.substr(28 + wcount, icount).c_str()) ;
-
-
-                    //cm取得
-                    for(int i = 3; i > 0; rbbuf++){
-                        if(*rbbuf == '"'){
-                            i--;
+                        //word取得
+                        rbbuf += 17;
+                        unsigned int wcount = 0;
+                        while (*rbbuf++ != '"'){
+                            wcount++;
                         }
-                        wcount++;
-                    }
-                    order1->CM = (float)(atof(sbuf.substr(30 + wcount, 5).c_str()));
+                        order1->word = sbuf.substr(17, wcount);
 
-                    //デバッグ用出力
-                    std::cout << "julius: " << order1->word << " " << order1->classid << " " <<  order1->CM << std::endl;
+                        //classid取得
+                        rbbuf += 10;
+                        unsigned int icount = 0;
+                        while (*rbbuf++ != '"'){
+                            icount++;
+                        }
+                        order1->classid = atoi(sbuf.substr(28 + wcount, icount).c_str()) ;
+
+                        //cm取得
+                        for(int i = 3; i > 0; rbbuf++){
+                            if(*rbbuf == '"'){
+                                i--;
+                            }
+                            wcount++;
+                        }
+                        order1->CM = (float)(atof(sbuf.substr(30 + wcount, 5).c_str()));
+
+                        //デバッグ用出力
+                        std::cout << "julius: " << order1->word << " " << order1->classid << " " <<  order1->CM << std::endl;
+
+                    }catch (char *str){
+                        cout << str << endl;
+                        cout << "Julius recv error!: It may be caused by corruption of data.";
+                    }
 
                 }
 
@@ -120,11 +125,10 @@ void juliusReceiver::receiveData() {
             write( sockfd, buf, rsize );
              */
 
-            sleep(1);
+
 
         }
     }
-    printf("called3");
 }
 
 void juliusReceiver::closeSocket(){

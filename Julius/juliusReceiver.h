@@ -14,7 +14,6 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <arpa/inet.h>
-#include "../rapidxml-1.13/rapidxml.hpp"
 
 using namespace std;
 
@@ -40,10 +39,14 @@ public:
 private:
     int sockfd;
     struct sockaddr_in addr = {0,};
-    char buf[1024 * 5];
     string sbuf;
-    char *buff[20];
     int julius_LOOP = 1;
+
+    // 受信
+    int rsize;
+    char buf[1024];
+    char *bbuf[100];
+    int rline;
 };
 
 struct order{
