@@ -1,34 +1,35 @@
 #include <iostream>
 #include <thread>
 #include <unistd.h>
+#include <sys/stat.h>
 #include "ContentMaster/EduContent.h"
-#include "DisplayView/EduDisplayView.h"
 #include "Julius/juliusReceiver.h"
 
 using namespace std;
 
-int main(int argc, char* argv[]){
+int main(){
 
     //julius起動
+
     juliusReceiver julius;
-    //std::thread thread1(&juliusReceiver::receiveData, &julius);
     std::thread thread_julius([&julius]() { julius.receiveData(); });
-
     thread_julius.detach();
+     /*
+    remove("/tmp/FIFO");
+    char path[256];
+    if ( mkfifo("/tmp/FIFO",0666) == -1 ) { perror("mkfifo"); return 0; }
 
+    system("./../Julius/juliusReceiver &");
+    */
 
     TitleContentMaster tcm;
-    TitleDisplayView tdv;
 
     //std::thread thread1(&TitleContentMaster::update, &tcm);
-    std::thread thread1([&tcm, &tdv]() {
-        while (1) {
-            tcm.update();
-            tdv.update();
-            sleep(1);
-        }
-    });
-    thread1.join();//join関数ならば合流を待つ。 detach関数ならば合流を待たない。
+
+    while (1) {
+        tcm.update();
+        sleep(1);
+    }
 
   return 0;
 }

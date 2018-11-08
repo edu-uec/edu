@@ -5,6 +5,7 @@
 #ifndef EDU_SOFTWARE_CPP_JULIUSRECEIVER_H
 #define EDU_SOFTWARE_CPP_JULIUSRECEIVER_H
 
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,93 +14,45 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include "structOrder.h"
+
+using namespace std;
 
 #define PORT 10500
 #define HOST "127.0.0.1" //localhost
+#define cmMinFilter 0.3 //CM値による送信制御の闘値
+
+int isDelimiter(char p, char delim);
+
+int split(char *dst[], char *src, char delim);
 
 class juliusReceiver{
 public:
-    juliusReceiver(){
-        //julius起動
-        system("cd ../");
-        system("bash ../Julius/julius_start.sh");
+    juliusReceiver();
 
-        sleep(5);
+    void receiveData();
 
-        // ソケット生成
-        if( (sockfd = socket( AF_INET, SOCK_STREAM, 0) ) < 0 ) {
-            perror( "socket" );
-            exit(2);
-        }
+    void closeSocket();
 
-        // 送信先アドレス・ポート番号設定
-        addr.sin_family = AF_INET;
-        addr.sin_port = htons( PORT );
-        addr.sin_addr.s_addr = inet_addr( HOST );
-        //addr.sin_addr.s_addr = INADDR_ANY;
+    char* getBuf();
 
-        // サーバ接続
-        if (connect( sockfd, (struct sockaddr *)&addr, sizeof( addr ) ) < 0){
-            perror("connect fallita");
-            exit(2);
-        }
-        /*
-        // データ送信
-        char send_str[10];
-        char receive_str[10];
-        for ( int i = 0; i < 10; i++ ){
-            sprintf( send_str, "%d", i );
-            printf( "send:%d\n", i );
-            if( send( sockfd, send_str, 10, 0 ) < 0 ) {
-                perror( "send" );
-            } else {
-                recv( sockfd, receive_str, 10, 0 );
-                printf( "receive:%s\n", receive_str );
-            }
-            sleep( 1 );
-        }
-        */
-    }
+    void changeLoop(int LOOP);
 
-    void receiveData(){
-        // 受信
-        int rsize;
-        while( julius_LOOP ) {
-            rsize = recv( sockfd, buf, sizeof( buf ), 0 );
-
-            if ( rsize == -1 ) {
-                perror( "recv" );
-            } else {
-                printf( "receive:%s\n", buf );
-                sleep( 1 );
-
-                // 応答
-                printf( "send:%s\n", buf );
-                write( sockfd, buf, rsize );
-            }
-        }
-        printf("called3");
-    }
-
-    void closeSocket(){
-        // ソケットクローズ
-        close( sockfd );
-    }
-
-    char* getBuf(){
-        return buf;
-    }
-
-    void changeLoop(int LOOP){
-        julius_LOOP = LOOP;
-    }
+    bool canSendData(struct order* order, struct order* preOrder);
 
 private:
     int sockfd;
     struct sockaddr_in addr = {0,};
-    char buf[10240];
+    string sbuf;
     int julius_LOOP = 1;
-};
 
+    struct order *preOrder, *order;//前回周の命令と現在の命令
+
+    // 受信
+    int rsize;
+    char buf[1024];
+    char *bbuf[100];
+    int rline;
+};
 
 #endif //EDU_SOFTWARE_CPP_JULIUSRECEIVER_H
