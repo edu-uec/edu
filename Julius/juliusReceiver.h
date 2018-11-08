@@ -14,11 +14,13 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include "structOrder.h"
 
 using namespace std;
 
 #define PORT 10500
 #define HOST "127.0.0.1" //localhost
+#define cmMinFilter 0.3 //CM値による送信制御の闘値
 
 int isDelimiter(char p, char delim);
 
@@ -36,23 +38,21 @@ public:
 
     void changeLoop(int LOOP);
 
+    bool canSendData(struct order* order, struct order* preOrder);
+
 private:
     int sockfd;
     struct sockaddr_in addr = {0,};
     string sbuf;
     int julius_LOOP = 1;
 
+    struct order *preOrder, *order;//前回周の命令と現在の命令
+
     // 受信
     int rsize;
     char buf[1024];
     char *bbuf[100];
     int rline;
-};
-
-struct order{
-    string word;
-    int classid;
-    float CM;
 };
 
 #endif //EDU_SOFTWARE_CPP_JULIUSRECEIVER_H

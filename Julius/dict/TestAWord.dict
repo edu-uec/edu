@@ -1,0 +1,29 @@
+0	[w_000右]	m i g i
+0	[w_001左]	h i d a r i
+0	[w_002上]	u e
+0	[w_003下]	sh i t a
+0	[w_004前]	m a e
+0	[w_004前]	m a q s u g u
+0	[w_005後]	u sh i r o
+0	[w_005後]	s a g a r u
+0	[w_006進]	s u s u m u
+0	[w_006進]	ch o k u sh i N
+0	[w_006進]	g o:
+0	[w_007曲]	m a g a r u
+0	[w_007曲]	y o k o
+0	[w_008止]	t o m a r u
+0	[w_008止]	s u t o q p u
+1	[c_000実行]	j i q k o u
+1	[c_000実行]	s u t a: t o
+1	[c_000実行]	r a N
+1	[c_001消去]	k e s u
+1	[c_001消去]	k e sh i t e
+1	[c_002中止]	ch u u sh i
+1	[c_002中止]	ky a N s e r u
+1	[c_002中止]	y a m e r u
+1	[c_003一つ戻る]	h i t o ts u m o d o r u
+1	[c_003一つ戻る]	y a r i n a o sh i
+1	[c_003一つ戻る]	m o d o q t e
+1	[c_003一つ戻る]	i m a n o n a sh i
+2	[s]	silB
+3	[e]	silE

@@ -1,5 +1,22 @@
 #include <iostream>
 #include "juliusReceiver.h"
+#include "structOrder.h"
+
+#include "server/unix_socket_server.hpp"
+
+/*
+int main(int argc, char* argv[]){
+    char dir[255];
+    getcwd(dir,255);
+    cout<<"Current Directory : "<<dir<<endl;
+
+    juliusReceiver julius;
+
+    julius.receiveData();
+
+    return 0;
+}
+ */
 
 int isDelimiter(char p, char delim){
     return p == delim;
@@ -56,14 +73,22 @@ juliusReceiver::juliusReceiver() {
     sleep(3);
 }
 
+//juliusデータ受信・ソケットデータ送信、スレッド起動想定
 void juliusReceiver::receiveData() {
+    asio::io_service io_service;
+    unlink("/tmp/unix_socket_test");
+    UnixSocketServer unixSocketServer1(io_service);
+    unixSocketServer1.accept();
+
+    preOrder = (struct order*)malloc(sizeof(struct order));
+    preOrder->word = "";
+    preOrder->CM = 0;
+    preOrder->classid = 9999;
 
     while( julius_LOOP ) {
         sleep(1);
-
         rsize = recv( sockfd, buf, sizeof( buf ), 0 );
 
-        printf("1asdasd");
         if ( rsize == -1 ) {
             perror( "recv" );
         } else {
@@ -76,8 +101,8 @@ void juliusReceiver::receiveData() {
                     try {
                         //printf("rr : %s\n", bbuf[i]);
 
-                        //order準備初期化
-                        auto order1 = (struct order*)malloc(sizeof(struct order));
+                        //order準備初期化(orderの規格はヘッダファイルにあり)
+                        order = (struct order*)malloc(sizeof(struct order));
 
                         char* rbbuf = bbuf[i];
 
@@ -87,7 +112,7 @@ void juliusReceiver::receiveData() {
                         while (*rbbuf++ != '"'){
                             wcount++;
                         }
-                        order1->word = sbuf.substr(17, wcount);
+                        order->word = sbuf.substr(17, wcount);
 
                         //classid取得
                         rbbuf += 10;
@@ -95,7 +120,7 @@ void juliusReceiver::receiveData() {
                         while (*rbbuf++ != '"'){
                             icount++;
                         }
-                        order1->classid = atoi(sbuf.substr(28 + wcount, icount).c_str()) ;
+                        order->classid = atoi(sbuf.substr(28 + wcount, icount).c_str()) ;
 
                         //cm取得
                         for(int i = 3; i > 0; rbbuf++){
@@ -104,10 +129,20 @@ void juliusReceiver::receiveData() {
                             }
                             wcount++;
                         }
-                        order1->CM = (float)(atof(sbuf.substr(30 + wcount, 5).c_str()));
+                        order->CM = (float)(atof(sbuf.substr(30 + wcount, 5).c_str()));
+
+                        //ソケットデータ送信
+                        if(juliusReceiver::canSendData(order, preOrder)){
+                            unixSocketServer1.write(order->word);
+                        }
 
                         //デバッグ用出力
-                        std::cout << "julius: " << order1->word << " " << order1->classid << " " <<  order1->CM << std::endl;
+                        //std::cout << "julius: " << order->word << " " << order->classid << " " <<  order->CM << std::endl;
+
+
+                        //保存データの更新
+                        free(preOrder);
+                        preOrder = order;
 
                     }catch (char *str){
                         cout << str << endl;
@@ -118,15 +153,6 @@ void juliusReceiver::receiveData() {
 
 
             }
-
-            /*
-            // 応答
-            printf( "send:%s\n", buf );
-            write( sockfd, buf, rsize );
-             */
-
-
-
         }
     }
 }
@@ -142,5 +168,10 @@ char* juliusReceiver::getBuf() {
 
 void juliusReceiver::changeLoop(int LOOP) {
     julius_LOOP = LOOP;
+}
+
+bool juliusReceiver::canSendData(struct order* order, struct order* preOrder) {
+    char c = order->word.at(0);
+    return (order->CM != preOrder->CM) && (order->CM > cmMinFilter) && (c != 's') && (c != 'e');
 }
 
