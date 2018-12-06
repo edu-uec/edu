@@ -2,7 +2,7 @@
 #include "juliusReceiver.h"
 #include "structOrder.h"
 
-#include "server/unix_socket_server.hpp"
+#include "server/unix_socket_client.hpp"
 
 /*
 int main(int argc, char* argv[]){
@@ -75,10 +75,14 @@ juliusReceiver::juliusReceiver() {
 
 //juliusデータ受信・ソケットデータ送信、スレッド起動想定
 void juliusReceiver::receiveData() {
+//    asio::io_service io_service;
+//    unlink("/tmp/unix_socket_test");
+//    UnixSocketServer unixSocketServer1(io_service);
+//    unixSocketServer1.accept();
+
     asio::io_service io_service;
-    unlink("/tmp/unix_socket_test");
-    UnixSocketServer unixSocketServer1(io_service);
-    unixSocketServer1.accept();
+    UnixSocketClient unixSocketClient1(io_service);
+    unixSocketClient1.connect();
 
     preOrder = (struct order*)malloc(sizeof(struct order));
     preOrder->word = "";
@@ -133,11 +137,11 @@ void juliusReceiver::receiveData() {
 
                         //ソケットデータ送信
                         if(juliusReceiver::canSendData(order, preOrder)){
-                            unixSocketServer1.write(order->word);
+                            unixSocketClient1.write(order->word + "!");
                         }
 
                         //デバッグ用出力
-                        //std::cout << "julius: " << order->word << " " << order->classid << " " <<  order->CM << std::endl;
+                        std::cout << "julius: " << order->word << "  cid: " << order->classid << "  cm: " <<  order->CM << std::endl;
 
 
                         //保存データの更新
@@ -172,5 +176,5 @@ void juliusReceiver::changeLoop(int LOOP) {
 
 bool juliusReceiver::canSendData(struct order* order, struct order* preOrder) {
     char c = order->word.at(0);
-    return (order->CM != preOrder->CM) && (order->CM > cmMinFilter) && (c != 's') && (c != 'e');
+    return (order->CM > cmMinFilter) && (c != 's') && (c != 'e');
 }

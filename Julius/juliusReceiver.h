@@ -20,7 +20,7 @@ using namespace std;
 
 #define PORT 10500
 #define HOST "127.0.0.1" //localhost
-#define cmMinFilter 0.3 //CM値による送信制御の闘値
+#define cmMinFilter 0.2 //CM値による送信制御の闘値
 
 int isDelimiter(char p, char delim);
 
