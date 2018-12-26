@@ -25,5 +25,75 @@
 1	[c_003一つ戻る]	y a r i n a o sh i
 1	[c_003一つ戻る]	m o d o q t e
 1	[c_003一つ戻る]	i m a n o n a sh i
-2	[s]	silB
-3	[e]	silE
+2	[g_a]	a
+2	[g_i]	i
+2	[g_u]	u
+2	[g_e]	e
+2	[g_o]	o
+2	[g_ka]	k a
+2	[g_ki]	k i
+2	[g_ku]	k u
+2	[g_ke]	k e
+2	[g_ko]	k o
+2	[g_ga]	g a
+2	[g_gi]	g i
+2	[g_gu]	g u
+2	[g_ge]	g e
+2	[g_go]	g o
+2	[g_sa]	s a
+2	[g_si]	sh i
+2	[g_su]	s u
+2	[g_se]	s e
+2	[g_so]	s o
+2	[g_za]	z a
+2	[g_zi]	j i
+2	[g_zu]	z u
+2	[g_ze]	z e
+2	[g_zo]	z o
+2	[g_ta]	t a
+2	[g_ti]	ch i
+2	[g_tu]	ts u
+2	[g_te]	t e
+2	[g_to]	t o
+2	[g_da]	d a
+2	[g_di]	j i
+2	[g_du]	z u
+2	[g_de]	d e
+2	[g_do]	d o
+2	[g_na]	n a
+2	[g_ni]	n i
+2	[g_nu]	n u
+2	[g_ne]	n e
+2	[g_no]	n o
+2	[g_ha]	h a
+2	[g_hi]	h i
+2	[g_hu]	f u
+2	[g_he]	h e
+2	[g_ho]	h o
+2	[g_ba]	b a
+2	[g_bi]	b i
+2	[g_bu]	b u
+2	[g_be]	b e
+2	[g_bo]	b o
+2	[g_pa]	p a
+2	[g_pi]	p i
+2	[g_pu]	p u
+2	[g_pe]	p e
+2	[g_po]	p o
+2	[g_ma]	m a
+2	[g_mi]	m i
+2	[g_mu]	m u
+2	[g_me]	m e
+2	[g_mo]	m o
+2	[g_ya]	y a
+2	[g_yu]	y u
+2	[g_yo]	y o
+2	[g_ra]	r a
+2	[g_ri]	r i
+2	[g_ru]	r u
+2	[g_re]	r e
+2	[g_ro]	r o
+2	[g_wa]	w a
+2	[g_N]	N
+3	[s]	silB
+4	[e]	silE

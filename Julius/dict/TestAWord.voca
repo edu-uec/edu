@@ -23,10 +23,81 @@ c_001消去	k e sh i t e
 c_002中止	ch u u sh i
 c_002中止	ky a N s e r u
 c_002中止	y a m e r u
-c_003一つ戻る	 h i t o ts u m o d o r u
-c_003一つ戻る	 y a r i n a o sh i
-c_003一つ戻る	 m o d o q t e
-c_003一つ戻る	 i m a n o n a sh i
+c_003一つ戻る	h i t o ts u m o d o r u
+c_003一つ戻る	y a r i n a o sh i
+c_003一つ戻る	m o d o q t e
+c_003一つ戻る	i m a n o n a sh i
+% NOISE
+g_a	a
+g_i	i
+g_u	u
+g_e	e
+g_o	o
+g_ka	k a
+g_ki	k i
+g_ku	k u
+g_ke	k e
+g_ko	k o
+g_ga	g a
+g_gi	g i
+g_gu	g u
+g_ge	g e
+g_go	g o
+g_sa	s a
+g_si	sh i
+g_su	s u
+g_se	s e
+g_so	s o
+g_za	z a
+g_zi	j i
+g_zu	z u
+g_ze	z e
+g_zo	z o
+g_ta	t a
+g_ti	ch i
+g_tu	ts u
+g_te	t e
+g_to	t o
+g_da	d a
+g_di	j i
+g_du	z u
+g_de	d e
+g_do	d o
+g_na	n a
+g_ni	n i
+g_nu	n u
+g_ne	n e
+g_no	n o
+g_ha	h a
+g_hi	h i
+g_hu	f u
+g_he	h e
+g_ho	h o
+g_ba	b a
+g_bi	b i
+g_bu	b u
+g_be	b e
+g_bo	b o
+g_pa	p a
+g_pi	p i
+g_pu	p u
+g_pe	p e
+g_po	p o
+g_ma	m a
+g_mi	m i
+g_mu	m u
+g_me	m e
+g_mo	m o
+g_ya	y a
+g_yu	y u
+g_yo	y o
+g_ra	r a
+g_ri	r i
+g_ru	r u
+g_re	r e
+g_ro	r o
+g_wa	w a
+g_N	 N
 % NS_B
 s	silB
 % NS_E

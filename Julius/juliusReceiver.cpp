@@ -2,7 +2,7 @@
 #include "juliusReceiver.h"
 #include "structOrder.h"
 
-#include "server/unix_socket_client.hpp"
+#include "client/unix_socket_client.hpp"
 
 /*
 int main(int argc, char* argv[]){
@@ -176,5 +176,5 @@ void juliusReceiver::changeLoop(int LOOP) {
 
 bool juliusReceiver::canSendData(struct order* order, struct order* preOrder) {
     char c = order->word.at(0);
-    return (order->CM > cmMinFilter) && (c != 's') && (c != 'e');
+    return (order->CM > cmMinFilter) && (c != 's') && (c != 'e') && (c != 'g');
 }

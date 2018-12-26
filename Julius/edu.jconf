@@ -1,3 +1,4 @@
+# 音声認識精度に関わるオプションあり
 -v ../Julius/model/lang_m/bccwj.60k.htkdic
 -h ../Julius/model/phone_m/jnas-tri-3k16-gid.binhmm
 -hlist ../Julius/model/phone_m/logicalTri
@@ -7,9 +8,10 @@
 -b2 100
 -s 500
 -m 10000
--n 3
+-n 1
 -output 1
 -input mic
 -zmeanframe
 -rejectshort 800
+-lv 3000
 #-charconv sjis utf8
