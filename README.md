@@ -6,6 +6,10 @@
 * dictation-kit-v4.4
 を導入下で生成・実行している。
 
+## 辞書
+- iconv -f utf8 -t eucjp dict/TestAWord.yomi | gramtools/yomi2voca/yomi2voca.pl | iconv -f eucjp -t utf8 > dict/TestAWord.voca
+- gramtools/mkdfa/mkdfa.pl dict/TestAWord
+
 ## 実行コマンド
 edu.jconfのあるディレクトリで
 `$ julius -C edu.jconf -nostrip -gram dict/ForAnnouncement`
