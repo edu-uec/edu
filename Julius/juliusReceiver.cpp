@@ -50,8 +50,6 @@ juliusReceiver::juliusReceiver() {
     //system("cd ../");
     system("bash ../Julius/julius_start.sh");
 
-    sleep(2);
-
     // ソケット生成
     if( (sockfd = socket( AF_INET, SOCK_STREAM, 0) ) < 0 ) {
         perror( "socket" );
@@ -69,8 +67,6 @@ juliusReceiver::juliusReceiver() {
         perror("connect fallita");
         exit(2);
     }
-
-    sleep(3);
 }
 
 //juliusデータ受信・ソケットデータ送信、スレッド起動想定
