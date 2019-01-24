@@ -1,4 +1,5 @@
 #include <iostream>
+#include <exception>
 #include "juliusReceiver.h"
 #include "structOrder.h"
 
@@ -51,7 +52,10 @@ juliusReceiver::juliusReceiver() {
     system("bash ../Julius/julius_start.sh");
 
     // ソケット生成
-    if( (sockfd = socket( AF_INET, SOCK_STREAM, 0) ) < 0 ) {
+    try {
+        sockfd = socket( AF_INET, SOCK_STREAM, 0);
+    } catch (std::exception const &e) {
+        std::cerr << "Error: in socket" << e.what() << std::endl;
         perror( "socket" );
         exit(2);
     }
@@ -63,8 +67,12 @@ juliusReceiver::juliusReceiver() {
     //addr.sin_addr.s_addr = INADDR_ANY;
 
     // サーバ接続
-    if (connect( sockfd, (struct sockaddr *)&addr, sizeof( addr ) ) != 0){
-        perror("connect fallita");
+    try {
+        connect( sockfd, (struct sockaddr *)&addr, sizeof( addr ));
+        std::cout << "connect done" << std::endl;
+    } catch (std::exception const &e) {
+        std::cerr << "Exception in connect" << e.what() << std::endl;
+        //perror("connect fallita");
         exit(2);
     }
 }

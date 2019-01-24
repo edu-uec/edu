@@ -1,0 +1,3 @@
+/home/pi/Edu/edu/Exec/CMakeFiles/rebuild_cache.dir
+/home/pi/Edu/edu/Exec/CMakeFiles/edit_cache.dir
+/home/pi/Edu/edu/Exec/CMakeFiles/Edu_software_cpp.dir
