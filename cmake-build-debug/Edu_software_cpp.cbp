@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Edu_software_cpp"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Edu_software_cpp">
+				<Option output="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Edu_software_cpp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 Edu_software_cpp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Edu_software_cpp/fast">
+				<Option output="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Edu_software_cpp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 Edu_software_cpp/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/minorim_n/Documents/ForSchool/i-CCD/edu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/ContentMaster/ContentMasterBase_CommonMethods.cpp">
+			<Option target="Edu_software_cpp"/>
+		</Unit>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/ContentMaster/EduContent.h">
+			<Option target="Edu_software_cpp"/>
+		</Unit>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/ContentMaster/TitleContentMaster.cpp">
+			<Option target="Edu_software_cpp"/>
+		</Unit>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Edu.cpp">
+			<Option target="Edu_software_cpp"/>
+		</Unit>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/juliusReceiver.cpp">
+			<Option target="Edu_software_cpp"/>
+		</Unit>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/juliusReceiver.h">
+			<Option target="Edu_software_cpp"/>
+		</Unit>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/server/unix_socket_server.hpp">
+			<Option target="Edu_software_cpp"/>
+		</Unit>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/structOrder.h">
+			<Option target="Edu_software_cpp"/>
+		</Unit>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
