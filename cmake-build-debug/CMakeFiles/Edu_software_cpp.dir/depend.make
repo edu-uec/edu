@@ -9,13 +9,13 @@ CMakeFiles/Edu_software_cpp.dir/ContentMaster/TitleContentMaster.cpp.o: ../Conte
 
 CMakeFiles/Edu_software_cpp.dir/Edu.cpp.o: ../ContentMaster/EduContent.h
 CMakeFiles/Edu_software_cpp.dir/Edu.cpp.o: ../Edu.cpp
+CMakeFiles/Edu_software_cpp.dir/Edu.cpp.o: ../Julius/juliusOrder.h
 CMakeFiles/Edu_software_cpp.dir/Edu.cpp.o: ../Julius/juliusReceiver.h
-CMakeFiles/Edu_software_cpp.dir/Edu.cpp.o: ../Julius/structOrder.h
 
 CMakeFiles/Edu_software_cpp.dir/Julius/juliusReceiver.cpp.o: ../Julius/client/unix_socket_client.hpp
+CMakeFiles/Edu_software_cpp.dir/Julius/juliusReceiver.cpp.o: ../Julius/juliusOrder.h
 CMakeFiles/Edu_software_cpp.dir/Julius/juliusReceiver.cpp.o: ../Julius/juliusReceiver.cpp
 CMakeFiles/Edu_software_cpp.dir/Julius/juliusReceiver.cpp.o: ../Julius/juliusReceiver.h
-CMakeFiles/Edu_software_cpp.dir/Julius/juliusReceiver.cpp.o: ../Julius/structOrder.h
 CMakeFiles/Edu_software_cpp.dir/Julius/juliusReceiver.cpp.o: /usr/local/include/boost/array.hpp
 CMakeFiles/Edu_software_cpp.dir/Julius/juliusReceiver.cpp.o: /usr/local/include/boost/asio.hpp
 CMakeFiles/Edu_software_cpp.dir/Julius/juliusReceiver.cpp.o: /usr/local/include/boost/asio/associated_allocator.hpp

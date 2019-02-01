@@ -10,7 +10,8 @@
 
 using namespace std;
 
-struct order{
+class Order{
+public:
     string word;
     int classid;
     float CM;

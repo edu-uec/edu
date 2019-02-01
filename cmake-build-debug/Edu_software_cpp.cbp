@@ -92,6 +92,9 @@
 		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Edu.cpp">
 			<Option target="Edu_software_cpp"/>
 		</Unit>
+		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/juliusOrder.h">
+			<Option target="Edu_software_cpp"/>
+		</Unit>
 		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/juliusReceiver.cpp">
 			<Option target="Edu_software_cpp"/>
 		</Unit>
@@ -99,9 +102,6 @@
 			<Option target="Edu_software_cpp"/>
 		</Unit>
 		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/server/unix_socket_server.hpp">
-			<Option target="Edu_software_cpp"/>
-		</Unit>
-		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/structOrder.h">
 			<Option target="Edu_software_cpp"/>
 		</Unit>
 		<Unit filename="/Users/minorim_n/Documents/ForSchool/i-CCD/edu/CMakeLists.txt">
