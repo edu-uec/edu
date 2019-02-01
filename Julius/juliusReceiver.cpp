@@ -138,7 +138,6 @@ void juliusReceiver::receiveData() {
                         preOrder.word = nowOrder.word;
                         preOrder.classid = nowOrder.classid;
                         preOrder.CM = nowOrder.CM;
-
                     }catch (char *str){
                         cout << str << endl;
                         cout << "Julius recv error!: It may be caused by corruption of data.";
