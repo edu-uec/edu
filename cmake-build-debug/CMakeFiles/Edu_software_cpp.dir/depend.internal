@@ -10,13 +10,13 @@ CMakeFiles/Edu_software_cpp.dir/ContentMaster/TitleContentMaster.cpp.o
 CMakeFiles/Edu_software_cpp.dir/Edu.cpp.o
  /Users/minorim_n/Documents/ForSchool/i-CCD/edu/ContentMaster/EduContent.h
  /Users/minorim_n/Documents/ForSchool/i-CCD/edu/Edu.cpp
+ /Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/juliusOrder.h
  /Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/juliusReceiver.h
- /Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/structOrder.h
 CMakeFiles/Edu_software_cpp.dir/Julius/juliusReceiver.cpp.o
  /Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/client/unix_socket_client.hpp
+ /Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/juliusOrder.h
  /Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/juliusReceiver.cpp
  /Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/juliusReceiver.h
- /Users/minorim_n/Documents/ForSchool/i-CCD/edu/Julius/structOrder.h
  /usr/local/include/boost/array.hpp
  /usr/local/include/boost/asio.hpp
  /usr/local/include/boost/asio/associated_allocator.hpp

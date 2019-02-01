@@ -13,23 +13,7 @@ int main(){
 
     juliusReceiver julius;
     std::thread thread_julius([&julius]() { julius.receiveData(); });
-    thread_julius.detach();
-     /*
-    remove("/tmp/FIFO");
-    char path[256];
-    if ( mkfifo("/tmp/FIFO",0666) == -1 ) { perror("mkfifo"); return 0; }
-
-    system("./../Julius/juliusReceiver &");
-    */
-
-    TitleContentMaster tcm;
-
-    //std::thread thread1(&TitleContentMaster::update, &tcm);
-
-    while (1) {
-        tcm.update();
-        sleep(1);
-    }
+    thread_julius.join();
 
   return 0;
 }
